@@ -36,6 +36,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     }
   }
   catch (e) {
-    res.status(404).send("MAC Not Found");
+    res.status(404).send("Error encountered: " + (e instanceof Error ? e.message : String(e)));
   }
 }
